@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.firstzone.dept">
+
+<!-- Mybatis가 select 결과를 읽어서 resultType 객체를 생성(기본생성자필수)하고 setting한다.(setter필수) -->
+	<select id="selectAll" resultType="deptDTO">
+		select * 
+		
+		from departments order by 1
+	</select>
+	
+	<select id="selectById" parameterType="int" resultType="deptDTO">
+		select * from departments where department_id = #{aa} 
+	</select>
+	
+	<insert id="insert" parameterType="deptDTO">
+		insert into departments(department_id, department_name, manager_id, location_id)
+		 values(#{department_id}, #{department_name}, #{manager_id}, #{location_id})
+	</insert>
+	
+	<update id="update" parameterType="deptDTO">
+		update departments set
+			department_name=#{department_name},
+			manager_id=#{manager_id},
+			location_id=#{location_id}
+		where department_id=#{department_id}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from departments where department_id=#{department_id}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<!-- 칼럼의 값이 null이 오면 mybaits에서 칼럼 타입으로 null 처리 -->
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<!-- 별명을 등록한다. -->
+	<typeAliases>
+		<typeAlias type="com.shinhan.spring.model.EmpDTO" alias="empDTO" />
+		<typeAlias type="com.shinhan.spring.model.DeptDTO" alias="deptDTO" />
+		<typeAlias type="com.shinhan.spring.model.JobDTO" alias="jobDTO" />
+<!-- 		<typeAlias type="com.shinhan.spring.model.BoardDTO" alias="boardDTO" /> -->
+	</typeAliases>
+	
+	
+</configuration>
